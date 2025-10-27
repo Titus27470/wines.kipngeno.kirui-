@@ -1,0 +1,2057 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KIPNGENO CYRENE | Premium Drinks in Kericho</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary: #8B0000;
+            --secondary: #D4AF37;
+            --accent: #2E8B57;
+            --dark: #1a1a1a;
+            --light: #f8f8f8;
+            --gray: #666;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            background-image: 
+                linear-gradient(rgba(15, 15, 15, 0.85), rgba(15, 15, 15, 0.9)),
+                url('https://images.unsplash.com/photo-1572116469696-31de0f17cc34?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        .overlay {
+            background-color: rgba(248, 248, 248, 0.92);
+            min-height: 100vh;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: #a52a2a;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+        
+        .section-title p {
+            color: var(--gray);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 20px auto 0;
+        }
+        
+        /* Login/Register Page Styles */
+        .auth-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1572116469696-31de0f17cc34?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80') no-repeat center center/cover;
+        }
+        
+        .auth-box {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 450px;
+            overflow: hidden;
+        }
+        
+        .auth-header {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .auth-header h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .auth-header h1 i {
+            margin-right: 10px;
+        }
+        
+        .auth-header p {
+            opacity: 0.9;
+        }
+        
+        .auth-tabs {
+            display: flex;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .auth-tab {
+            flex: 1;
+            padding: 15px;
+            text-align: center;
+            background: #f9f9f9;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+        
+        .auth-tab.active {
+            background: white;
+            color: var(--primary);
+            border-bottom: 3px solid var(--primary);
+        }
+        
+        .auth-tab:hover:not(.active) {
+            background: #f0f0f0;
+        }
+        
+        .auth-form {
+            padding: 30px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(139, 0, 0, 0.1);
+        }
+        
+        .password-requirements {
+            font-size: 0.8rem;
+            color: var(--gray);
+            margin-top: 5px;
+        }
+        
+        .password-strength {
+            height: 5px;
+            background: #eee;
+            border-radius: 3px;
+            margin-top: 5px;
+            overflow: hidden;
+        }
+        
+        .password-strength-bar {
+            height: 100%;
+            width: 0;
+            transition: width 0.3s ease;
+        }
+        
+        .password-strength.weak .password-strength-bar {
+            background: #ff6b6b;
+            width: 33%;
+        }
+        
+        .password-strength.medium .password-strength-bar {
+            background: #ffd93d;
+            width: 66%;
+        }
+        
+        .password-strength.strong .password-strength-bar {
+            background: #6bcf7f;
+            width: 100%;
+        }
+        
+        .form-options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .remember-me {
+            display: flex;
+            align-items: center;
+        }
+        
+        .remember-me input {
+            margin-right: 8px;
+        }
+        
+        .forgot-password {
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+        
+        .auth-button {
+            width: 100%;
+            padding: 12px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        
+        .auth-button:hover {
+            background: #a52a2a;
+        }
+        
+        .auth-divider {
+            text-align: center;
+            margin: 20px 0;
+            position: relative;
+        }
+        
+        .auth-divider::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: #eee;
+        }
+        
+        .auth-divider span {
+            background: white;
+            padding: 0 15px;
+            color: var(--gray);
+        }
+        
+        .social-auth {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-btn {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .social-btn:hover {
+            background: #f9f9f9;
+            border-color: #ccc;
+        }
+        
+        .social-btn i {
+            margin-right: 8px;
+            font-size: 1.2rem;
+        }
+        
+        .auth-footer {
+            text-align: center;
+            padding: 20px;
+            background: #f9f9f9;
+            border-top: 1px solid #eee;
+        }
+        
+        .auth-footer a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .auth-footer a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Website Content (Initially Hidden) */
+        .website-content {
+            display: none;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            color: var(--secondary);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            align-items: center;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .user-menu {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .logout-btn {
+            background: transparent;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .logout-btn:hover {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .cart-icon {
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .cart-count {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: 
+                linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                url('https://images.unsplash.com/photo-1572116469696-31de0f17cc34?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80') no-repeat center center/cover;
+            color: white;
+            padding: 180px 0 100px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .hero-buttons .btn {
+            background-color: var(--secondary);
+            color: var(--dark);
+        }
+        
+        .hero-buttons .btn-outline {
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+        
+        .hero-buttons .btn:hover {
+            background-color: white;
+            color: var(--dark);
+        }
+        
+        .hero-buttons .btn-outline:hover {
+            background-color: white;
+            color: var(--dark);
+        }
+        
+        /* Features Section */
+        .features {
+            background-color: rgba(255, 255, 255, 0.9);
+            position: relative;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            z-index: 2;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .feature-card p {
+            color: var(--gray);
+        }
+        
+        /* Categories Section */
+        .categories {
+            background-color: rgba(249, 249, 249, 0.9);
+            position: relative;
+        }
+        
+        .category-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .category-tab {
+            padding: 12px 25px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        
+        .category-tab.active {
+            background-color: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        
+        .category-tab:hover:not(.active) {
+            background-color: #f0f0f0;
+            transform: translateY(-2px);
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .product-img {
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .product-card:hover .product-img img {
+            transform: scale(1.1);
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--secondary);
+            color: var(--dark);
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            z-index: 2;
+        }
+        
+        .product-content {
+            padding: 20px;
+        }
+        
+        .product-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        
+        .product-content p {
+            color: var(--gray);
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+        
+        .product-price {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+        }
+        
+        .price {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--primary);
+        }
+        
+        /* About Section */
+        .about {
+            position: relative;
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .about-text h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+            color: var(--gray);
+        }
+        
+        .about-features {
+            list-style: none;
+            margin-top: 30px;
+        }
+        
+        .about-features li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .about-features i {
+            color: var(--secondary);
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .about-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            height: 400px;
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* Services Section */
+        .services {
+            background-color: rgba(249, 249, 249, 0.9);
+            position: relative;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            z-index: 2;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .service-card p {
+            color: var(--gray);
+        }
+        
+        /* Contact Section */
+        .contact {
+            position: relative;
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+        
+        .contact-details {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+        
+        .contact-details li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-details i {
+            color: var(--primary);
+            margin-right: 15px;
+            font-size: 1.2rem;
+            width: 20px;
+            text-align: center;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--secondary);
+            color: var(--dark);
+            transform: translateY(-3px);
+        }
+        
+        .contact-form {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 70px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--secondary);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #334155;
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+        
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 500px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--gray);
+        }
+        
+        .close-modal:hover {
+            color: var(--primary);
+        }
+        
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+        
+        .cart-item-info {
+            flex-grow: 1;
+        }
+        
+        .cart-item-name {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .cart-item-price {
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        .cart-item-quantity {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .quantity-btn {
+            background-color: #f0f0f0;
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        
+        .quantity-btn:hover {
+            background-color: #e0e0e0;
+        }
+        
+        .cart-total {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 2px solid #eee;
+            text-align: right;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        .payment-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .payment-method {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .payment-method:hover {
+            border-color: var(--primary);
+            background-color: rgba(139, 0, 0, 0.05);
+        }
+        
+        .payment-method.active {
+            border-color: var(--primary);
+            background-color: rgba(139, 0, 0, 0.1);
+        }
+        
+        .payment-icon {
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .about-content, .contact-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-image {
+                order: -1;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links li {
+                margin: 10px 0;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hero-buttons .btn {
+                width: 100%;
+                max-width: 250px;
+                margin-bottom: 10px;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .user-menu {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Authentication Page (Initially Visible) -->
+    <div class="auth-container" id="auth-container">
+        <div class="auth-box">
+            <div class="auth-header">
+                <h1><i class="fas fa-wine-bottle"></i> KIPNGENO CYRENE</h1>
+                <p>Welcome to Kenya's Premium Liquor Store</p>
+            </div>
+            
+            <div class="auth-tabs">
+                <div class="auth-tab active" id="login-tab">Login</div>
+                <div class="auth-tab" id="register-tab">Register</div>
+            </div>
+            
+            <!-- Login Form -->
+            <form class="auth-form" id="login-form">
+                <div class="form-group">
+                    <label for="login-email">Email Address</label>
+                    <input type="email" id="login-email" class="form-control" placeholder="Enter your email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" class="form-control" placeholder="Enter your password" required>
+                </div>
+                
+                <div class="form-options">
+                    <div class="remember-me">
+                        <input type="checkbox" id="remember-me">
+                        <label for="remember-me">Remember me</label>
+                    </div>
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                </div>
+                
+                <button type="submit" class="auth-button">Login</button>
+                
+                <div class="auth-divider">
+                    <span>Or continue with</span>
+                </div>
+                
+                <div class="social-auth">
+                    <div class="social-btn">
+                        <i class="fab fa-google"></i> Google
+                    </div>
+                    <div class="social-btn">
+                        <i class="fab fa-facebook-f"></i> Facebook
+                    </div>
+                </div>
+            </form>
+            
+            <!-- Register Form -->
+            <form class="auth-form" id="register-form" style="display: none;">
+                <div class="form-group">
+                    <label for="register-name">Full Name</label>
+                    <input type="text" id="register-name" class="form-control" placeholder="Enter your full name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="register-email">Email Address</label>
+                    <input type="email" id="register-email" class="form-control" placeholder="Enter your email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="register-password">Password</label>
+                    <input type="password" id="register-password" class="form-control" placeholder="Create a password" required>
+                    <div class="password-requirements">
+                        Password must be at least 6 characters with uppercase, lowercase, and numbers
+                    </div>
+                    <div class="password-strength" id="password-strength">
+                        <div class="password-strength-bar"></div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" class="form-control" placeholder="Confirm your password" required>
+                </div>
+                
+                <button type="submit" class="auth-button">Create Account</button>
+                
+                <div class="auth-divider">
+                    <span>Or continue with</span>
+                </div>
+                
+                <div class="social-auth">
+                    <div class="social-btn">
+                        <i class="fab fa-google"></i> Google
+                    </div>
+                    <div class="social-btn">
+                        <i class="fab fa-facebook-f"></i> Facebook
+                    </div>
+                </div>
+            </form>
+            
+            <div class="auth-footer">
+                <p>By continuing, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Website Content (Initially Hidden) -->
+    <div class="website-content" id="website-content">
+        <div class="overlay">
+            <!-- Header -->
+            <header>
+                <div class="container">
+                    <nav class="navbar">
+                        <a href="#" class="logo"><i class="fas fa-wine-bottle"></i> KIPNGENO CYRENE</a>
+                        <ul class="nav-links">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#products">Products</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#services">Services</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                            <li class="user-menu">
+                                <div class="user-info">
+                                    <div class="user-avatar" id="user-avatar">U</div>
+                                    <span id="user-name">User</span>
+                                </div>
+                                <button class="logout-btn" id="logout-btn">Logout</button>
+                            </li>
+                            <li class="cart-icon" id="cart-icon">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span class="cart-count" id="cart-count">0</span>
+                            </li>
+                        </ul>
+                        <div class="mobile-menu">
+                            <i class="fas fa-bars"></i>
+                        </div>
+                    </nav>
+                </div>
+            </header>
+
+            <!-- Hero Section -->
+            <section class="hero">
+                <div class="container">
+                    <div class="hero-content">
+                        <h1>Welcome to KIPNGENO CYRENE</h1>
+                        <p>Discover our extensive collection of fine wines, spirits, beers, and soft drinks. Quality guaranteed with fast delivery across Kericho.</p>
+                        <div class="hero-buttons">
+                            <a href="#products" class="btn">Shop Now</a>
+                            <a href="#contact" class="btn btn-outline">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Features Section -->
+            <section class="features">
+                <div class="container">
+                    <div class="section-title">
+                        <h2>Why Choose Us</h2>
+                        <p>We provide the best beverage experience in Kericho</p>
+                    </div>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-wine-bottle"></i>
+                            </div>
+                            <h3>Premium Selection</h3>
+                            <p>Curated collection of the finest spirits, wines, beers and soft drinks from around the world.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-shipping-fast"></i>
+                            </div>
+                            <h3>Fast Delivery</h3>
+                            <p>Quick and reliable delivery services across Kericho and surrounding areas.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <h3>Quality Guaranteed</h3>
+                            <p>All our products are sourced from reputable suppliers with quality assurance.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Products Section -->
+            <section id="products" class="categories">
+                <div class="container">
+                    <div class="section-title">
+                        <h2>Our Products</h2>
+                        <p>Explore our wide selection of beverages for every occasion</p>
+                    </div>
+                    
+                    <div class="category-tabs">
+                        <div class="category-tab active" data-category="all">All Drinks</div>
+                        <div class="category-tab" data-category="spirits">Spirits</div>
+                        <div class="category-tab" data-category="whiskey">Whiskey</div>
+                        <div class="category-tab" data-category="beer">Beers</div>
+                        <div class="category-tab" data-category="soft">Soft Drinks</div>
+                    </div>
+                    
+                    <div class="products-grid">
+                        <!-- Spirit Products -->
+                        <div class="product-card" data-category="spirits">
+                            <div class="product-img" style="background: linear-gradient(45deg, #4169E1, #1E90FF);">
+                                <img src="https://images.unsplash.com/photo-1572383672419-ab35444a6934?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2080&q=80" alt="Smirnoff Vodka">
+                                <div class="product-badge">Spirit</div>
+                            </div>
+                            <div class="product-content">
+                                <h3>Smirnoff Vodka</h3>
+                                <p>Premium Russian vodka, perfect for cocktails and mixed drinks.</p>
+                                <div class="product-price">
+                                    <span class="price">KSh 1,800</span>
+                                    <button class="btn add-to-cart" data-id="2" data-name="Smirnoff Vodka" data-price="1800">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Whiskey Products -->
+                        <div class="product-card" data-category="whiskey">
+                            <div class="product-img" style="background: linear-gradient(45deg, #8B4513, #D2691E);">
+                                <img src="https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Jameson Irish Whiskey">
+                                <div class="product-badge">Whiskey</div>
+                            </div>
+                            <div class="product-content">
+                                <h3>Jameson Irish Whiskey</h3>
+                                <p>Smooth triple-distilled Irish whiskey with notes of vanilla and honey.</p>
+                                <div class="product-price">
+                                    <span class="price">KSh 2,500</span>
+                                    <button class="btn add-to-cart" data-id="1" data-name="Jameson Irish Whiskey" data-price="2500">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="product-card" data-category="whiskey">
+                            <div class="product-img" style="background: linear-gradient(45deg, #2F4F4F, #708090);">
+                                <img src="https://images.unsplash.com/photo-1600271886743-fd35c9c9df71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Johnnie Walker Black Label">
+                                <div class="product-badge">Whiskey</div>
+                            </div>
+                            <div class="product-content">
+                                <h3>Johnnie Walker Black Label</h3>
+                                <p>Rich, complex blended Scotch whisky with layers of smoke and malt.</p>
+                                <div class="product-price">
+                                    <span class="price">KSh 3,200</span>
+                                    <button class="btn add-to-cart" data-id="9" data-name="Johnnie Walker Black Label" data-price="3200">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="product-card" data-category="whiskey">
+                            <div class="product-img" style="background: linear-gradient(45deg, #8B0000, #B22222);">
+                                <img src="https://images.unsplash.com/photo-1599599353950-6eac7c8fecd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Johnnie Walker Red Label">
+                                <div class="product-badge">Whiskey</div>
+                            </div>
+                            <div class="product-content">
+                                <h3>Johnnie Walker Red Label</h3>
+                                <p>Vibrant blended Scotch whisky with spicy and sweet flavors.</p>
+                                <div class="product-price">
+                                    <span class="price">KSh 2,800</span>
+                                    <button class="btn add-to-cart" data-id="10" data-name="Johnnie Walker Red Label" data-price="2800">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Beer Products -->
+                        <div class="product-card" data-category="beer">
+                            <div class="product-img" style="background: linear-gradient(45deg, #DAA520, #F4A460);">
+                                <img src="https://images.unsplash.com/photo-1566633806327-68e152aaf26d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Tusker Lager">
+                                <div class="product-badge">Beer</div>
+                            </div>
+                            <div class="product-content">
+                                <h3>Tusker Lager</h3>
+                                <p>Kenya's premium lager beer with a crisp, refreshing taste.</p>
+                                <div class="product-price">
+                                    <span class="price">KSh 200</span>
+                                    <button class="btn add-to-cart" data-id="5" data-name="Tusker Lager" data-price="200">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="product-card" data-category="beer">
+                            <div class="product-img" style="background: linear-gradient(45deg, #CD853F, #DEB887);">
+                                <img src="https://images.unsplash.com/photo-1618885472189-6330c6aca8d9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="White Cap Lager">
+                                <div class="product-badge">Beer</div>
+                            </div>
+                            <div class="product-content">
+                                <h3>White Cap Lager</h3>
+                                <p>Smooth and refreshing lager with a balanced hop character.</p>
+                                <div class="product-price">
+                                    <span class="price">KSh 180</span>
+                                    <button class="btn add-to-cart" data-id="6" data-name="White Cap Lager" data-price="180">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="product-card" data-category="beer">
+                            <div class="product-img" style="background: linear-gradient(45deg, #8B4513, #A0522D);">
+                                <img src="https://images.unsplash.com/photo-1535958636474-b021ee887b13?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Viceroy Beer">
+                                <div class="product-badge">Beer</div>
+                            </div>
+                            <div class="product-content">
+                                <h3>Viceroy Beer</h3>
+                                <p>Premium Kenyan beer with a rich, full-bodied flavor.</p>
+                                <div class="product-price">
+                                    <span class="price">KSh 220</span>
+                                    <button class="btn add-to-cart" data-id="11" data-name="Viceroy Beer" data-price="220">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="product-card" data-category="beer">
+                            <div class="product-img" style="background: linear-gradient(45deg, #2F4F4F, #708090);">
+                                <img src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" alt="Guinness">
+                                <div class="product-badge">Beer</div>
+                            </div>
+                            <div class="product-content">
+                                <h3>Guinness</h3>
+                                <p>World-famous Irish stout with a distinctive dark color and rich flavor.</p>
+                                <div class="product-price">
+                                    <span class="price">KSh 250</span>
+                                    <button class="btn add-to-cart" data-id="12" data-name="Guinness" data-price="250">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Soft Drink Products -->
+                        <div class="product-card" data-category="soft">
+                            <div class="product-img" style="background: linear-gradient(45deg, #8B0000, #B22222);">
+                                <img src="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Coca-Cola">
+                                <div class="product-badge">Soft Drink</div>
+                            </div>
+                            <div class="product-content">
+                                <h3>Coca-Cola</h3>
+                                <p>Classic refreshing cola drink, perfect for any occasion.</p>
+                                <div class="product-price">
+                                    <span class="price">KSh 80</span>
+                                    <button class="btn add-to-cart" data-id="7" data-name="Coca-Cola" data-price="80">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="product-card" data-category="soft">
+                            <div class="product-img" style="background: linear-gradient(45deg, #32CD32, #90EE90);">
+                                <img src="https://images.unsplash.com/photo-1625772299848-391b6a87d7b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Sprite">
+                                <div class="product-badge">Soft Drink</div>
+                            </div>
+                            <div class="product-content">
+                                <h3>Sprite</h3>
+                                <p>Lemon-lime flavored soft drink, crisp and refreshing.</p>
+                                <div class="product-price">
+                                    <span class="price">KSh 80</span>
+                                    <button class="btn add-to-cart" data-id="8" data-name="Sprite" data-price="80">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section id="about" class="about">
+                <div class="container">
+                    <div class="about-content">
+                        <div class="about-text">
+                            <h2>About KIPNGENO CYRENE</h2>
+                            <p>Established in Kericho, KIPNGENO CYRENE has been the premier destination for quality beverages in the region. We take pride in offering an extensive selection of both alcoholic and non-alcoholic drinks to suit every taste and occasion.</p>
+                            <p>Our commitment to quality, customer service, and community has made us a trusted name in the beverage industry. We source our products from reputable suppliers to ensure you receive only the best.</p>
+                            
+                            <ul class="about-features">
+                                <li><i class="fas fa-check-circle"></i> Wide selection of premium drinks</li>
+                                <li><i class="fas fa-check-circle"></i> Competitive prices</li>
+                                <li><i class="fas fa-check-circle"></i> Fast delivery across Kericho</li>
+                                <li><i class="fas fa-check-circle"></i> Knowledgeable and friendly staff</li>
+                            </ul>
+                            
+                            <a href="#contact" class="btn" style="margin-top: 20px;">Visit Our Store</a>
+                        </div>
+                        <div class="about-image">
+                            <img src="https://images.unsplash.com/photo-1572116469696-31de0f17cc34?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80" alt="KIPNGENO CYRENE Store">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Services Section -->
+            <section id="services" class="services">
+                <div class="container">
+                    <div class="section-title">
+                        <h2>Our Services</h2>
+                        <p>We offer more than just great products</p>
+                    </div>
+                    
+                    <div class="services-grid">
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-truck"></i>
+                            </div>
+                            <h3>Fast Delivery</h3>
+                            <p>We offer quick and reliable delivery services across Kericho and surrounding areas.</p>
+                        </div>
+                        
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-gift"></i>
+                            </div>
+                            <h3>Gift Services</h3>
+                            <p>Perfectly packaged gifts and corporate orders for any special occasion.</p>
+                        </div>
+                        
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-concierge-bell"></i>
+                            </div>
+                            <h3>Event Support</h3>
+                            <p>Beverage supply and consultation for weddings, parties, and corporate events.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="contact">
+                <div class="container">
+                    <div class="section-title">
+                        <h2>Contact Us</h2>
+                        <p>Get in touch with us for orders and inquiries</p>
+                    </div>
+                    
+                    <div class="contact-content">
+                        <div class="contact-info">
+                            <h3>Visit Our Store</h3>
+                            <ul class="contact-details">
+                                <li>
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Kericho Town, Kericho County, Kenya</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-phone"></i>
+                                    <span>+254 720 874 806</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-envelope"></i>
+                                    <span>info@kipngenocyrene.com</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-clock"></i>
+                                    <span>Mon-Sat: 9:00 AM - 8:00 PM | Sun: 10:00 AM - 6:00 PM</span>
+                                </li>
+                            </ul>
+                            
+                            <h3>Follow Us</h3>
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-form">
+                            <h3>Send Us a Message</h3>
+                            <form id="contact-form">
+                                <div class="form-group">
+                                    <label for="name">Your Name</label>
+                                    <input type="text" id="name" class="form-control" placeholder="Enter your name" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="email">Your Email</label>
+                                    <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="phone">Phone Number</label>
+                                    <input type="tel" id="phone" class="form-control" placeholder="Enter your phone number" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="message">Your Message</label>
+                                    <textarea id="message" class="form-control" placeholder="Enter your message" required></textarea>
+                                </div>
+                                
+                                <button type="submit" class="btn">Send Message</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer>
+                <div class="container">
+                    <div class="footer-content">
+                        <div class="footer-column">
+                            <h3>KIPNGENO CYRENE</h3>
+                            <p>Your trusted partner for premium beverages in Kericho. Quality drinks for every occasion.</p>
+                        </div>
+                        <div class="footer-column">
+                            <h3>Quick Links</h3>
+                            <ul class="footer-links">
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#products">Products</a></li>
+                                <li><a href="#about">About Us</a></li>
+                                <li><a href="#services">Services</a></li>
+                                <li><a href="#contact">Contact</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-column">
+                            <h3>Products</h3>
+                            <ul class="footer-links">
+                                <li><a href="#">Spirits</a></li>
+                                <li><a href="#">Whiskey</a></li>
+                                <li><a href="#">Beers</a></li>
+                                <li><a href="#">Soft Drinks</a></li>
+                                <li><a href="#">New Arrivals</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-column">
+                            <h3>Contact Info</h3>
+                            <ul class="footer-links">
+                                <li><i class="fas fa-map-marker-alt"></i> Kericho Town, Kenya</li>
+                                <li><i class="fas fa-phone"></i> +254 720 874 806</li>
+                                <li><i class="fas fa-envelope"></i> info@kipngenocyrene.com</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="copyright">
+                        <p>&copy; 2023 KIPNGENO CYRENE. All rights reserved. | Designed for Kericho Community</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div class="modal" id="cart-modal">
+        <div class="modal-content">
+            <span class="close-modal" id="close-cart">&times;</span>
+            <h2>Your Shopping Cart</h2>
+            <div id="cart-items">
+                <!-- Cart items will be dynamically added here -->
+            </div>
+            <div class="cart-total">
+                Total: KSh <span id="cart-total-amount">0</span>
+            </div>
+            <button class="btn" id="checkout-btn" style="width: 100%; margin-top: 20px;">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div class="modal" id="checkout-modal">
+        <div class="modal-content">
+            <span class="close-modal" id="close-checkout">&times;</span>
+            <h2>Checkout</h2>
+            <form id="checkout-form">
+                <div class="form-group">
+                    <label for="customer-name">Full Name</label>
+                    <input type="text" id="customer-name" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="customer-email">Email Address</label>
+                    <input type="email" id="customer-email" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="customer-phone">Phone Number</label>
+                    <input type="tel" id="customer-phone" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="customer-address">Delivery Address</label>
+                    <textarea id="customer-address" class="form-control" required></textarea>
+                </div>
+                
+                <h3 style="margin: 20px 0 10px;">Payment Method</h3>
+                <div class="payment-methods">
+                    <div class="payment-method active" data-method="mpesa">
+                        <div class="payment-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div>
+                            <div>M-Pesa</div>
+                            <small>Pay with M-Pesa STK Push</small>
+                        </div>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn" style="width: 100%; margin-top: 20px;">Complete Order</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Payment Modal -->
+    <div class="modal" id="payment-modal">
+        <div class="modal-content">
+            <span class="close-modal" id="close-payment">&times;</span>
+            <h2>Complete Payment</h2>
+            <div style="text-align: center; margin: 20px 0;">
+                <div class="payment-icon" style="font-size: 3rem; margin-bottom: 15px;">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <p>You will receive an M-Pesa prompt on your phone shortly.</p>
+                <p>Please enter your M-Pesa PIN to complete the payment.</p>
+            </div>
+            <div style="background: #f9f9f9; padding: 15px; border-radius: 5px; margin: 20px 0;">
+                <p><strong>Order Total:</strong> KSh <span id="payment-total">0</span></p>
+                <p><strong>Phone Number:</strong> <span id="payment-phone"></span></p>
+            </div>
+            <button class="btn" id="confirm-payment" style="width: 100%;">I've Completed Payment</button>
+        </div>
+    </div>
+
+    <script>
+        // User Authentication System
+        let currentUser = null;
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        
+        // Tab Switching
+        document.getElementById('login-tab').addEventListener('click', function() {
+            document.getElementById('login-tab').classList.add('active');
+            document.getElementById('register-tab').classList.remove('active');
+            document.getElementById('login-form').style.display = 'block';
+            document.getElementById('register-form').style.display = 'none';
+        });
+        
+        document.getElementById('register-tab').addEventListener('click', function() {
+            document.getElementById('register-tab').classList.add('active');
+            document.getElementById('login-tab').classList.remove('active');
+            document.getElementById('register-form').style.display = 'block';
+            document.getElementById('login-form').style.display = 'none';
+        });
+        
+        // Password Strength Checker
+        document.getElementById('register-password').addEventListener('input', function() {
+            const password = this.value;
+            const strengthBar = document.querySelector('.password-strength');
+            const strengthText = strengthBar.parentElement.querySelector('.password-requirements');
+            
+            // Reset classes
+            strengthBar.className = 'password-strength';
+            
+            // Check password requirements
+            const hasMinLength = password.length >= 6;
+            const hasUpperCase = /[A-Z]/.test(password);
+            const hasLowerCase = /[a-z]/.test(password);
+            const hasNumbers = /[0-9]/.test(password);
+            
+            // Calculate strength
+            let strength = 0;
+            if (hasMinLength) strength++;
+            if (hasUpperCase) strength++;
+            if (hasLowerCase) strength++;
+            if (hasNumbers) strength++;
+            
+            // Update strength indicator
+            if (strength === 0) {
+                strengthBar.className = 'password-strength';
+            } else if (strength <= 2) {
+                strengthBar.className = 'password-strength weak';
+            } else if (strength === 3) {
+                strengthBar.className = 'password-strength medium';
+            } else {
+                strengthBar.className = 'password-strength strong';
+            }
+        });
+        
+        // Login Form Submission
+        document.getElementById('login-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+            
+            // Simple validation
+            if (!email || !password) {
+                alert('Please fill in all fields');
+                return;
+            }
+            
+            // In a real app, this would validate against a backend
+            // For demo purposes, we'll just check if user exists in localStorage
+            const users = JSON.parse(localStorage.getItem('users')) || [];
+            const user = users.find(u => u.email === email && u.password === password);
+            
+            if (user) {
+                // Successful login
+                currentUser = user;
+                localStorage.setItem('currentUser', JSON.stringify(user));
+                showWebsite();
+            } else {
+                alert('Invalid email or password. Please try again or register a new account.');
+            }
+        });
+        
+        // Register Form Submission
+        document.getElementById('register-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('register-name').value;
+            const email = document.getElementById('register-email').value;
+            const password = document.getElementById('register-password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+            
+            // Validation
+            if (!name || !email || !password || !confirmPassword) {
+                alert('Please fill in all fields');
+                return;
+            }
+            
+            if (password !== confirmPassword) {
+                alert('Passwords do not match');
+                return;
+            }
+            
+            // Password strength validation
+            const hasMinLength = password.length >= 6;
+            const hasUpperCase = /[A-Z]/.test(password);
+            const hasLowerCase = /[a-z]/.test(password);
+            const hasNumbers = /[0-9]/.test(password);
+            
+            if (!hasMinLength || !hasUpperCase || !hasLowerCase || !hasNumbers) {
+                alert('Password must be at least 6 characters with uppercase, lowercase, and numbers');
+                return;
+            }
+            
+            // Check if user already exists
+            const users = JSON.parse(localStorage.getItem('users')) || [];
+            if (users.find(u => u.email === email)) {
+                alert('An account with this email already exists');
+                return;
+            }
+            
+            // Create new user
+            const newUser = {
+                id: Date.now(),
+                name: name,
+                email: email,
+                password: password,
+                createdAt: new Date().toISOString()
+            };
+            
+            users.push(newUser);
+            localStorage.setItem('users', JSON.stringify(users));
+            
+            // Auto-login the new user
+            currentUser = newUser;
+            localStorage.setItem('currentUser', JSON.stringify(newUser));
+            
+            alert('Account created successfully! Welcome to KIPNGENO CYRENE.');
+            showWebsite();
+        });
+        
+        // Show Website Function
+        function showWebsite() {
+            document.getElementById('auth-container').style.display = 'none';
+            document.getElementById('website-content').style.display = 'block';
+            
+            // Update user info in header
+            if (currentUser) {
+                document.getElementById('user-name').textContent = currentUser.name;
+                document.getElementById('user-avatar').textContent = currentUser.name.charAt(0).toUpperCase();
+            }
+            
+            // Initialize cart count
+            updateCartCount();
+        }
+        
+        // Logout Function
+        document.getElementById('logout-btn').addEventListener('click', function() {
+            currentUser = null;
+            localStorage.removeItem('currentUser');
+            document.getElementById('auth-container').style.display = 'flex';
+            document.getElementById('website-content').style.display = 'none';
+            
+            // Reset forms
+            document.getElementById('login-form').reset();
+            document.getElementById('register-form').reset();
+        });
+        
+        // Check if user is already logged in
+        window.addEventListener('DOMContentLoaded', function() {
+            const savedUser = localStorage.getItem('currentUser');
+            if (savedUser) {
+                currentUser = JSON.parse(savedUser);
+                showWebsite();
+            }
+        });
+        
+        // Shopping Cart Functionality
+        function updateCartCount() {
+            const cartCount = document.getElementById('cart-count');
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartCount.textContent = totalItems;
+        }
+        
+        // Add to cart
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', function() {
+                if (!currentUser) {
+                    alert('Please login to add items to your cart');
+                    return;
+                }
+                
+                const id = this.getAttribute('data-id');
+                const name = this.getAttribute('data-name');
+                const price = parseInt(this.getAttribute('data-price'));
+                
+                // Check if item already in cart
+                const existingItem = cart.find(item => item.id === id);
+                
+                if (existingItem) {
+                    existingItem.quantity += 1;
+                } else {
+                    cart.push({
+                        id,
+                        name,
+                        price,
+                        quantity: 1
+                    });
+                }
+                
+                // Save to localStorage
+                localStorage.setItem('cart', JSON.stringify(cart));
+                
+                // Update cart count
+                updateCartCount();
+                
+                // Show notification
+                showNotification(`${name} added to cart!`);
+            });
+        });
+        
+        // Show notification
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 100px;
+                right: 20px;
+                background: var(--secondary);
+                color: var(--dark);
+                padding: 15px 20px;
+                border-radius: 5px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+                z-index: 1001;
+                font-weight: 600;
+            `;
+            notification.textContent = message;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.remove();
+            }, 3000);
+        }
+        
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+        
+        // Category filtering
+        document.querySelectorAll('.category-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                document.querySelectorAll('.category-tab').forEach(t => {
+                    t.classList.remove('active');
+                });
+                
+                this.classList.add('active');
+                
+                const category = this.getAttribute('data-category');
+                const products = document.querySelectorAll('.product-card');
+                
+                products.forEach(product => {
+                    if (category === 'all' || product.getAttribute('data-category') === category) {
+                        product.style.display = 'block';
+                    } else {
+                        product.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    document.querySelector('.nav-links').classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
